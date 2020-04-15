@@ -79,6 +79,7 @@ export default class ReactGoogleAutocomplete extends React.Component {
   }
 
   render() {
+    console.log("first ReactGoogleAutocomplete");
     const {
       onPlaceSelected,
       types,
@@ -137,6 +138,8 @@ export class ReactCustomGoogleAutocomplete extends React.Component {
   }
 
   render() {
+    console.log("second ReactCustomGoogleAutocomplete");
+
     return (
       <div>
         {React.cloneElement(this.props.input, {
