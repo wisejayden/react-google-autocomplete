@@ -38,7 +38,7 @@ export default class ReactGoogleAutocomplete extends React.Component {
     if (componentRestrictions) {
       config.componentRestrictions = componentRestrictions;
     }
-
+    console.log("this.refs.input", this.refs.input);
     this.disableAutofill();
     const userInput = 'berlin, ' + this.refs.input;
     console.log("UserInput", userInput);
@@ -82,7 +82,7 @@ export default class ReactGoogleAutocomplete extends React.Component {
   }
 
   render() {
-    console.log("first ReactGoogleAutocomplete");
+    console.log("first ReactGoogleAutocomplete -  value", value);
     const {
       onPlaceSelected,
       types,
