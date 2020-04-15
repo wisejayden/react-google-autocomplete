@@ -38,12 +38,14 @@ export default class ReactGoogleAutocomplete extends React.Component {
     if (componentRestrictions) {
       config.componentRestrictions = componentRestrictions;
     }
-    console.log("this.refs.input", this.refs.input);
     this.disableAutofill();
     const userInput = 'berlin, ' + this.refs.input;
     console.log("UserInput", userInput);
+    console.log("this.refs.input", this.refs.input);
+
+
     this.autocomplete = new google.maps.places.Autocomplete(
-      userInput,
+      this.refs.input,
       config
     );
 
