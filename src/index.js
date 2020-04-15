@@ -109,7 +109,7 @@ export class ReactCustomGoogleAutocomplete extends React.Component {
 
     if (e.target.value) {
       this.service.getPlacePredictions(
-        { input: e.target.value, types },
+        { input: 'berlin, ' + e.target.value, types },
         (predictions, status) => {
           if (status === 'OK' && predictions && predictions.length > 0) {
             this.props.onOpen(predictions);
