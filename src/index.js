@@ -40,9 +40,10 @@ export default class ReactGoogleAutocomplete extends React.Component {
     }
 
     this.disableAutofill();
-
+    const userInput = 'berlin, ' + this.refs.input;
+    console.log("UserInput", userInput);
     this.autocomplete = new google.maps.places.Autocomplete(
-      this.refs.input,
+      userInput,
       config
     );
 
@@ -58,6 +59,7 @@ export default class ReactGoogleAutocomplete extends React.Component {
       const observerHack = new MutationObserver(() => {
         observerHack.disconnect();
         if (this.refs && this.refs.input) {
+          console.log("disableAutofill");
           this.refs.input.autocomplete = this.props.inputAutocompleteValue || 'new-password';
         }
       });
@@ -73,6 +75,7 @@ export default class ReactGoogleAutocomplete extends React.Component {
   }
 
   onSelected() {
+    console.log("onSelected");
     if (this.props.onPlaceSelected && this.autocomplete) {
       this.props.onPlaceSelected(this.autocomplete.getPlace(), 'berlin, ' + this.refs.input);
     }
@@ -106,7 +109,7 @@ export class ReactCustomGoogleAutocomplete extends React.Component {
 
   onChange(e) {
     const { types = ['(cities)'] } = this.props;
-
+    console.log("onCHANGW, this!");
     if (e.target.value) {
       this.service.getPlacePredictions(
         { input: 'berlin, ' + e.target.value, types },
