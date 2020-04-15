@@ -82,7 +82,7 @@ export default class ReactGoogleAutocomplete extends React.Component {
   }
 
   render() {
-    console.log("first ReactGoogleAutocomplete -  value", value);
+
     const {
       onPlaceSelected,
       types,
@@ -90,6 +90,7 @@ export default class ReactGoogleAutocomplete extends React.Component {
       bounds,
       ...rest
     } = this.props;
+    console.log("first ReactGoogleAutocomplete -  props", this.props);
 
     return <input ref="input" {...rest} />;
   }
